@@ -66,7 +66,7 @@ function MintComponent(props) {
 
     },[contract, userAddress])
 
-    useEffect(() => {
+    useEffect( async () => {
         if(contract) {
             let idArr = [];
             let imageUrlArr = [];
