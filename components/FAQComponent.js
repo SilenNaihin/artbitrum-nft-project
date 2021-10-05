@@ -11,69 +11,58 @@ function FAQComponent() {
             What is ArbiSperm?
           </Accordion.Header>
           <Accordion.Body className="accordian-body">
-            YAY Bears is the first NFT collection launching on Arbitrum,
-            inspired by the life and work of Kanye West. We are huge fans of
-            Kanye, and we wanted to give ourselves and other fans a way to
-            express our love of his music and eccentricity on the blockchain,
-            especially as Donda has finally been released. Kanye is not
-            affiliated with this project in any way.
-          </Accordion.Body>
-        </Accordion.Item>
-        <Accordion.Item eventKey="1" className="accordian-item">
-          <Accordion.Header className="accordian-header">
-            But wait, what about copyright?
-          </Accordion.Header>
-          <Accordion.Body className="accordian-body">
-            We’ve taken care to avoid using any trademarks or copyrighted art.
-            While some of our art resembles copyrighted artwork (this is due to
-            the nature of the project’s inspiration), we strongly believe our
-            designs fall under parody fair use. However, should copyright owners
-            feel otherwise, this project will become an interesting experiment
-            in decentralization. Our NFTs live on Arbitrum, and all artwork is
-            hosted on IPFS. Fans and holders of YAY Bears are encouraged to host
-            the artwork on their own IPFS nodes in order to ensure its
-            availability.
+            ArbiSperm is amongst the first NFT collections launching on
+            Arbitrum. We strongly believe in two things. The power of life, and
+            the power of layer 2. Sperm is the essence of life. Every day a too
+            large to count amount of sperm is released into the world. Only the
+            0.000001% make it. Become a part of the ArbiSperm community to be a
+            part of the 0.000001% who are able to own a capped 200 ArbiSperm. We
+            believe in the power of Ethereum but L2 applications such as
+            Arbitrum are the future.
           </Accordion.Body>
         </Accordion.Item>
         <Accordion.Item eventKey="2" className="accordian-item">
           <Accordion.Header className="accordian-header">
-            Where can I find YAY Bears?
+            Where can I find ArbiSperm?
           </Accordion.Header>
           <Accordion.Body className="accordian-body">
-            YAY Bears are available for minting on this website. There is
-            currently no NFT marketplace on Arbitrum, but we are building our
-            own marketplace to account for this until OpenSea or another
-            marketplace supports Arbitrum. YAY Bears also have a{" "}
-            <a href="https://twitter.com/YAYBEAR">Twitter</a> account and a{" "}
-            <a href="https://discord.gg/p9aYnfBBab">Discord </a>server. Follow
-            us and join the server to become a part of the community!
+            ArbiSperm are available for minting on this website. There is
+            currently no NFT marketplace on Arbitrum, but we are currently
+            adding a way to view and trade ArbiSperm on this website. ArbiSperm
+            also has a <a href="https://twitter.com/arbisperm">Twitter</a>{" "}
+            account and a{" "}
+            <a href="https://discord.com/invite/T676yVmEue">Discord </a>
+            server. Follow us and join the server to become a part of the
+            community!
           </Accordion.Body>
         </Accordion.Item>
         <Accordion.Item eventKey="3" className="accordian-item">
           <Accordion.Header className="accordian-header">
-            Does the team keep any YAY Bears?
+            Does the team keep any ArbiSperm?
           </Accordion.Header>
           <Accordion.Body className="accordian-body">
-            The team will be minting 50 Bears for giveaways, marketing, and team
-            members.
+            The team will be minting 20 ArbiSperm for giveaways, marketing, and
+            team members.
           </Accordion.Body>
         </Accordion.Item>
         <Accordion.Item eventKey="4" className="accordian-item">
           <Accordion.Header className="accordian-header">
-            Do YAY Bears have any utility?
+            What does the future of ArbiSperm look like?
           </Accordion.Header>
           <Accordion.Body className="accordian-body">
-            Once all YAY Bears have been minted, the team will be setting up a
-            treasury with a portion of the funds to donate to charity. YAY Bear
+            Once all ArbiSperm have been minted, the team will be setting up a
+            treasury with a portion of the funds to donate to charity. ArbiSperm
             holders will get to vote on what charity those funds are donated to.
+            As well, once completely minted, two ArbiSperm that win the race 
+            will be randomly selected to win ETH.
           </Accordion.Body>
         </Accordion.Item>
         <Accordion.Item eventKey="5" className="accordian-item">
           <Accordion.Header className="accordian-header">
-            How to mint YAY Bears on Arbitrum?
+            How to mint ArbiSperm on Arbitrum? CHANGE THIS
           </Accordion.Header>
           <Accordion.Body className="accordian-body">
-            We have written a tutorial on how to mint YAY Bears on Arbitrum. You
+            We have written a tutorial on how to mint ArbiSperm on Arbitrum. You
             can check it out (
             <a
               href="https://hackmd.io/@YayBears/minting"
@@ -87,8 +76,7 @@ function FAQComponent() {
         </Accordion.Item>
         {/* <Accordion.Item eventKey="4" className="accordian-item">
           <Accordion.Header className="accordian-header">
-            When will next generations come out and what will they be able to
-            do?
+            What does the future 
           </Accordion.Header>
           <Accordion.Body className="accordian-body">
             We had no idea how successful this project would be or if people

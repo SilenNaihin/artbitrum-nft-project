@@ -14,7 +14,7 @@ export default function Home() {
   return (
     <div>
       <Head>
-        <title>YAY BEARS</title>
+        <title>ArbiSperm</title>
         <meta name="description" content="8K YAY Bears on Arbitrum" />
         <meta charSet='utf-8' />
         <link rel="icon" href="/logo.png" />
@@ -34,8 +34,8 @@ export default function Home() {
       </main>
 
       <footer className="footer">
-        <h1>YAY BEARS &copy; 2021</h1>
-        <p>Smart Contract Address: <a href="https://arbiscan.io/address/0x53930807383be7139e1da1a758370cd64469ee43">0x53930807383Be7139E1DA1A758370cd64469Ee43</a></p>
+        <h1>ArbiSperm &copy; 2021</h1>
+        <p>Smart Contract Address: CHANGE THIS<a href="https://arbiscan.io/address/0x53930807383be7139e1da1a758370cd64469ee43">0x53930807383Be7139E1DA1A758370cd64469Ee43</a></p>
         <div className="socials">
           <a href="https://twitter.com/yaybearnfts">
             <span>
