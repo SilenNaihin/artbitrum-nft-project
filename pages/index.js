@@ -15,8 +15,8 @@ export default function Home() {
     <div>
       <Head>
         <title>ArbiSperm</title>
-        <meta name="description" content="8K YAY Bears on Arbitrum" />
-        <meta charSet='utf-8' />
+        <meta name="description" content="200 ArbiSperm on Arbitrum" />
+        <meta charSet="utf-8" />
         <link rel="icon" href="/logo.png" />
         <link
           rel="stylesheet"
@@ -26,23 +26,28 @@ export default function Home() {
         />
       </Head>
 
-      <main>
+      <main >
         <TopComponent />
         <CountdownComponent />
         <FAQComponent />
         {/* <MintComponent /> */}
       </main>
 
-      <footer className="footer">
-        <h1>ArbiSperm &copy; 2021</h1>
-        <p>Smart Contract Address: CHANGE THIS<a href="https://arbiscan.io/address/0x53930807383be7139e1da1a758370cd64469ee43">0x53930807383Be7139E1DA1A758370cd64469Ee43</a></p>
+      <footer className="footer" style={{ paddingBottom: "12px" }}>
+        <h2 style={{ marginTop: "12px" }}>ArbiSperm &copy; 2021</h2>
+        <p>
+          Smart Contract Address: CHANGE THIS
+          <a href="https://arbiscan.io/address/0x53930807383be7139e1da1a758370cd64469ee43">
+            0x53930807383Be7139E1DA1A758370cd64469Ee43
+          </a>
+        </p>
         <div className="socials">
-          <a href="https://twitter.com/yaybearnfts">
+          <a href="https://twitter.com/arbisperm">
             <span>
               <FaTwitter /> &nbsp; &nbsp; &nbsp;
             </span>
           </a>
-          <a href="https://discord.gg/p9aYnfBBab">
+          <a href="https://discord.com/invite/T676yVmEue">
             <span>
               <FaDiscord /> &nbsp; &nbsp; &nbsp;
             </span>
