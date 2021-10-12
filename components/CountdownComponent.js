@@ -55,7 +55,7 @@ function CountdownComponent() {
             <p>
               {timerComponents.length ? (
                 <>
-                  <h1>Launching In...</h1>
+                  <h1 style={{textAlign: 'center'}}>Launching In</h1>
                   {timerComponents}
                 </>
               ) : (

@@ -8,17 +8,23 @@ function TopComponent() {
       <div className="background"></div>
 
       <Container>
-        <Row className="section-top">
-          <Col xs={12} md={6} className="section-top-left ">
-            <h1 className="neonText">ArbiSperm</h1>
+        <div className="section-top">
+          <div className="section-top-left ">
+            <div
+              className="neonText"
+              style={{ fontSize: "8rem", fontWeight: "bold" }}
+            >
+              ArbiSperm
+            </div>
             <p>
               200 Digitally Generated ArbiSperm on Arbitrum. Just keep swimming.
             </p>
-          </Col>
-          <Col xs={12} md={6} className="section-top-right">
-            <img className="img-fluid" src="/assets/bears3.gif" fluid />
-          </Col>
-        </Row>
+          </div>
+          <div className="section-top-right">
+            <img className="img-fluid" src="/assets/bg.png" fluid />
+            {/* /assets/bears3.gif */}
+          </div>
+        </div>
       </Container>
     </>
   );
