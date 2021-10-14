@@ -21,8 +21,7 @@ function TopComponent() {
             </p>
           </div>
           <div className="section-top-right">
-            <img className="img-fluid" src="/assets/bg.png" fluid />
-            {/* /assets/bears3.gif */}
+            <img className="img-fluid" src="/assets/swimmers.gif" fluid />
           </div>
         </div>
       </Container>
