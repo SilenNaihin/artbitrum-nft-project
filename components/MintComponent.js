@@ -36,7 +36,6 @@ function MintComponent(props) {
         if((typeof window.ethereum !== 'undefined') || (typeof window.web3 !== 'undefined')) {
             if(window.ethereum) setIsMetaMaskDownloaded(true)
         }
-        console.log('here')
     },[])
 
     
@@ -55,6 +54,7 @@ function MintComponent(props) {
 
     useEffect(() => {
         if(signer) {
+            console.log(signer)
             signer.getAddress().then((addr) => setUserAddress(addr));
         }
     },[signer])
@@ -181,7 +181,15 @@ function MintComponent(props) {
                 ) : (
                   <p>
                     Please change your network to Arbitrum One Mainnet and
-                    reload this page.
+                    reload this page. Click on the extension, click on the
+                    network, and custom RPC. <br></br>
+                    <br></br>
+                    Enter the below information
+                    <br></br>- Network Name: Arbitrum One
+                    <br></br>- New RPC URL: https://arb1.arbitrum.io/rpc
+                    <br></br>- Chain ID: 42161
+                    <br></br>- Symbol: AETH
+                    <br></br>- Block Explorer URL: https://arbiscan.io
                   </p>
                 )}
               </>
