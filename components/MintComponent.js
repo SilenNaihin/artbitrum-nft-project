@@ -36,6 +36,7 @@ function MintComponent(props) {
         if((typeof window.ethereum !== 'undefined') || (typeof window.web3 !== 'undefined')) {
             if(window.ethereum) setIsMetaMaskDownloaded(true)
         }
+        console.log('here')
     },[])
 
     

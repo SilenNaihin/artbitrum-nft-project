@@ -59,7 +59,7 @@ function FAQComponent() {
         </Accordion.Item>
         <Accordion.Item eventKey="5" className="accordian-item">
           <Accordion.Header className="accordian-header">
-            How to mint ArbiSperm on Arbitrum? CHANGE THIS
+            How to mint ArbiSperm on Arbitrum?
           </Accordion.Header>
           <Accordion.Body className="accordian-body">
             We have written a tutorial on how to mint ArbiSperm on Arbitrum. You

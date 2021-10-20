@@ -36,7 +36,7 @@ export default function Home() {
       <footer className="footer" style={{ paddingBottom: "12px" }}>
         <h2 style={{ marginTop: "12px" }}>ArbiSperm &copy; 2021</h2>
         <p>
-          Smart Contract Address: CHANGE THIS
+          Smart Contract Address:
           <a href="https://arbiscan.io/address/0x2a0c81d09d28cD94E4bc65006d98cdE3095161FF">
             0x2a0c81d09d28cD94E4bc65006d98cdE3095161FF
           </a>
