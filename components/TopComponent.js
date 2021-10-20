@@ -17,7 +17,7 @@ function TopComponent() {
               ArbiSperm
             </div>
             <p>
-              200 Digitally Generated ArbiSperm on Arbitrum. Just keep swimming.
+              260 Digitally Generated ArbiSperm on Arbitrum. Just keep swimming.
             </p>
           </div>
           <div className="section-top-right">

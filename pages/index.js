@@ -5,7 +5,7 @@ import Head from "next/head";
 import FAQComponent from "../components/FAQComponent";
 import TopComponent from "../components/TopComponent";
 import CountdownComponent from "../components/CountdownComponent";
-// import MintComponent from "../components/MintComponent";
+import MintComponent from "../components/MintComponent";
 import { FaTwitter, FaDiscord } from "react-icons/fa";
 import 'react-bootstrap-range-slider/dist/react-bootstrap-range-slider.css';
 
@@ -15,7 +15,7 @@ export default function Home() {
     <div>
       <Head>
         <title>ArbiSperm</title>
-        <meta name="description" content="200 ArbiSperm on Arbitrum" />
+        <meta name="description" content="260 ArbiSperm on Arbitrum" />
         <meta charSet="utf-8" />
         <link rel="icon" href="/logo.png" />
         <link
@@ -26,19 +26,19 @@ export default function Home() {
         />
       </Head>
 
-      <main >
+      <main>
         <TopComponent />
         <CountdownComponent />
         <FAQComponent />
-        {/* <MintComponent /> */}
+        <MintComponent />
       </main>
 
       <footer className="footer" style={{ paddingBottom: "12px" }}>
         <h2 style={{ marginTop: "12px" }}>ArbiSperm &copy; 2021</h2>
         <p>
           Smart Contract Address: CHANGE THIS
-          <a href="https://arbiscan.io/address/0x53930807383be7139e1da1a758370cd64469ee43">
-            0x53930807383Be7139E1DA1A758370cd64469Ee43
+          <a href="https://arbiscan.io/address/0x2a0c81d09d28cD94E4bc65006d98cdE3095161FF">
+            0x2a0c81d09d28cD94E4bc65006d98cdE3095161FF
           </a>
         </p>
         <div className="socials">

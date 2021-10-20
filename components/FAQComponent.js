@@ -53,7 +53,7 @@ function FAQComponent() {
             Once all ArbiSperm have been minted, the team will be setting up a
             treasury with a portion of the funds to donate to charity. ArbiSperm
             holders will get to vote on what charity those funds are donated to.
-            As well, once completely minted, two ArbiSperm that win the race 
+            As well, once completely minted, two ArbiSperm that win the race
             will be randomly selected to win ETH.
           </Accordion.Body>
         </Accordion.Item>
@@ -65,7 +65,7 @@ function FAQComponent() {
             We have written a tutorial on how to mint ArbiSperm on Arbitrum. You
             can check it out (
             <a
-              href="https://hackmd.io/@YayBears/minting"
+              href="https://hackmd.io/@ArbiSperm/Byq8ZW6rF"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -76,13 +76,11 @@ function FAQComponent() {
         </Accordion.Item>
         {/* <Accordion.Item eventKey="4" className="accordian-item">
           <Accordion.Header className="accordian-header">
-            What does the future 
+            What does the future hold
           </Accordion.Header>
           <Accordion.Body className="accordian-body">
             We had no idea how successful this project would be or if people
-            would even want to buy these. However, if a strong community forms
-            around YAY Bears we are happy to explore additional functionalities
-            and a next generation of YAY Bears.
+            would even want to buy these.
           </Accordion.Body>
         </Accordion.Item> */}
       </Accordion>

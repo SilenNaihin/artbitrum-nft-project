@@ -5,18 +5,17 @@ import RangeSlider from 'react-bootstrap-range-slider';
 //Ethereum imports
 import {Contract, ethers} from 'ethers'
 
-import YayBearsArtifact from "./abi/YayBears.json"
+import ArbiSpermArtifact from "./abi/ArbiSperm.json"
 
-//const contractAddress = "0x00DcfcF0b2e8E6909dfeDD8fA939441EbA444849";
-const contractAddress = "0x53930807383Be7139E1DA1A758370cd64469Ee43";
-const abi = YayBearsArtifact.abi;
+const contractAddress = "0x2a0c81d09d28cD94E4bc65006d98cdE3095161FF";
+const abi = ArbiSpermArtifact.abi;
 
-const numCheapMints = 1000;
-
-const baseURI = "https://ipfs.infura.io/ipfs/QmUY1Pdir4DJieUB2nuFFDFRoxe3oL53uwJzYSd5jGbq6f/";
+const numCheapMints = 25;
+const baseURI =
+  "https://ipfs.infura.io/ipfs/QmZjYjWTu853UtVPfErRWFtezj6zvpwE7hsCHRrG3QihHK/";
 
 function MintComponent(props) {
-    const [ numBears, setNumBears ] = useState(1); 
+    const [ numSwimmers, setnumSwimmers ] = useState(1); 
     const [isSoldOut, setIsSoldOut ] = useState(false);
     const [isMetaMaskConnected, setIsMetaMaskConnected] = useState(false);
     const [mintPrice, setMintPrice] = useState(0.025);
@@ -29,9 +28,9 @@ function MintComponent(props) {
     const [isMetaMaskDownloaded, setIsMetaMaskDownloaded] = useState(false);
     const [canMint, setCanMint] = useState(true);
     const [userAddress, setUserAddress] = useState(null);
-    const [numUserBears, setNumUserBears] = useState(0);
-    const [userBearIds, setUserBearIds] = useState([]);
-    const [bearImages, setBearImages] = useState([]);
+    const [numUserSwimmers, setnumUserSwimmers] = useState(0);
+    const [userSwimmersIds, setUserSwimmersIds] = useState([]);
+    const [swimmerImages, setSwimmersImages] = useState([]);
 
     useEffect( () => {
         if((typeof window.ethereum !== 'undefined') || (typeof window.web3 !== 'undefined')) {
@@ -61,7 +60,7 @@ function MintComponent(props) {
 
     useEffect(() => {
         if(contract && userAddress) {
-            contract.balanceOf(userAddress).then((bal) => bal.toNumber()).then((bal) => setNumBears(bal));
+            contract.balanceOf(userAddress).then((bal) => bal.toNumber()).then((bal) => setnumSwimmers(bal));
         }
 
     },[contract, userAddress])
@@ -71,13 +70,13 @@ function MintComponent(props) {
             let idArr = [];
             let imageUrlArr = [];
 
-            for(let i = 0; i < numBears; i++) {
+            for(let i = 0; i < numSwimmers; i++) {
                 let id = await contract.tokenOfOwnerByIndex(userAddress,i).then((id) => id.toNumber());
                 idArr.push(id);
                 //console.log(getImgUrl(id));
             }
         }
-    }, [numBears])
+    }, [numSwimmers])
 
 
     useEffect( () => {
@@ -85,7 +84,7 @@ function MintComponent(props) {
             const writeContract = contract.connect(signer);
             setWriteContract(writeContract)
         }
-    }, [contract, isOnArbitrum, signer, numBears])
+    }, [contract, isOnArbitrum, signer, numSwimmers])
 
     useEffect(() => {
         if(contract && isOnArbitrum) {
@@ -97,19 +96,19 @@ function MintComponent(props) {
         if(contract && isOnArbitrum) {
             getPrice(setMintPrice, numMinted);
             getSoldOut(setIsSoldOut)
-            getCanMint(setCanMint, numMinted, numBears)
+            getCanMint(setCanMint, numMinted, numSwimmers)
         }
-    }, [contract, isOnArbitrum, numBears, numMinted])
+    }, [contract, isOnArbitrum, numSwimmers, numMinted])
 
     /*
     useEffect(() => {
         if (contract && isOnArbitrum) {
-            console.log(getTotalSupply(contract) + numBears)
-            if(getTotalSupply(contract) + numBears > maxCheapMint) {
+            console.log(getTotalSupply(contract) + numSwimmers)
+            if(getTotalSupply(contract) + numSwimmers > maxCheapMint) {
                 setMintPrice(0.05)
             }
         }
-    }, [numBears])
+    }, [numSwimmers])
     */
 
     const connectToMetaMask = async () => {
@@ -121,60 +120,93 @@ function MintComponent(props) {
     }
 
     return (
-        <div className="block-container"> 
-            <h1>Mint-A-Bear</h1>
-            { isMetaMaskDownloaded ? <>
-                {isMetaMaskConnected ? <>
-                    {isOnArbitrum ? <>
-                        <p>{numMinted}/8085 minted</p>
-                        {!isSoldOut ? <>
-                            <p>How many YAY Bears would you like to mint?</p>
-                            <div className="mint-slider">
-                                <RangeSlider 
-                                    value={numBears} min="1" 
-                                    max="20" 
-                                    tooltipPlacement="top" 
-                                    variant="dark"
-                                    onChange={changeEvent => setNumBears(parseInt(changeEvent.target.value))}
-                                />
-                                <p>Total: {(mintPrice * numBears).toFixed(3)} ETH + gas</p>
-                                {!canMint ? 
-                                    <p className="error-msg">
-                                        You are trying to mint more bears for 0.025 than are available at that price. 
-                                        Please reduce the number of bears and try again.
-                                    </p> : 
-                                    <Button variant="light" onClick={() =>mint(numBears, mintPrice, writeContract)}>Mint</Button>
-                                }
-                            </div>
-                        </> : <p>Sold Out!</p>
-                        }
-                        <div className="bear-viewer">
-                            <h2>Bear Viewer</h2>
-                            { numUserBears != 0 ? 
-                                <div></div>
-                            : <p>You have no YAY Bears :(</p>
+      <div className="block-container">
+        <h1>Mint-A-Swimmer</h1>
+        {isMetaMaskDownloaded ? (
+          <>
+            {isMetaMaskConnected ? (
+              <>
+                {isOnArbitrum ? (
+                  <>
+                    <p>{numMinted}/260 minted</p>
+                    {!isSoldOut ? (
+                      <>
+                        <p>How many ArbiSperm would you like to mint?</p>
+                        <div className="mint-slider">
+                          <RangeSlider
+                            value={numSwimmers}
+                            min="1"
+                            max="20"
+                            tooltipPlacement="top"
+                            variant="dark"
+                            onChange={(changeEvent) =>
+                              setnumSwimmers(parseInt(changeEvent.target.value))
                             }
+                          />
+                          <p>
+                            Total: {(mintPrice * numSwimmers).toFixed(3)} ETH +
+                            gas
+                          </p>
+                          {!canMint ? (
+                            <p className="error-msg">
+                              You are trying to mint more ArbiSperm for 0.025
+                              than are available at that price. Please reduce
+                              the number of swimmers and try again.
+                            </p>
+                          ) : (
+                            <Button
+                              variant="light"
+                              onClick={() =>
+                                mint(numSwimmers, mintPrice, writeContract)
+                              }
+                            >
+                              Mint
+                            </Button>
+                          )}
                         </div>
-                    </> : <p>Please change your network to Arbitrum One Mainnet and reload this page.</p>
-                    }
-                </> : <Button variant="light" onClick={connectToMetaMask}>Connect To Metamask</Button>
-                }
-            </> : <p>Please download MetaMask and reload this page.</p>
-            }
-        </div>
-     );
+                      </>
+                    ) : (
+                      <p>Sold Out!</p>
+                    )}
+                    <div className="swimmer-viewer">
+                      <h2>ArbiSperm Viewer</h2>
+                      {numUserSwimmers != 0 ? (
+                        <div></div>
+                      ) : (
+                        <p>You have no ArbiSperm:(</p>
+                      )}
+                    </div>
+                  </>
+                ) : (
+                  <p>
+                    Please change your network to Arbitrum One Mainnet and
+                    reload this page.
+                  </p>
+                )}
+              </>
+            ) : (
+              <Button variant="light" onClick={connectToMetaMask}>
+                Connect To Metamask
+              </Button>
+            )}
+          </>
+        ) : (
+          <p>Please download MetaMask and reload this page.</p>
+        )}
+      </div>
+    );
 }
 
-async function mint(numBears, mintPrice, writeContract,signer) {
-    const override = {
-        value: ethers.utils.parseEther((mintPrice*numBears).toString()),
-        gasLimit: 4000000 * numBears
-    }
-    try {
-        writeContract.mint(numBears, override)
-    } catch(error) {
-        console.log(error.message)
-    }
+async function mint(numSwimmers, mintPrice, writeContract, signer) {
+  const override = {
+    value: ethers.utils.parseEther((mintPrice * numSwimmers).toString()),
+    gasLimit: 4000000 * numSwimmers,
+  };
+  try {
+    writeContract.mint(numSwimmers, override);
+  } catch (error) {
+    console.log(error.message);
+  }
 }
 
 function getPrice(setMintPrice, numMinted) {
@@ -194,8 +226,8 @@ function getSoldOut(setIsSoldOut, numMinted) {
     }
 }
 
-function getCanMint(setCanMint, numMinted, numBears) {
-    if(numMinted + parseInt(numBears) > numCheapMints && numMinted < numCheapMints) {
+function getCanMint(setCanMint, numMinted, numSwimmers) {
+    if(numMinted + parseInt(numSwimmers) > numCheapMints && numMinted < numCheapMints) {
         setCanMint(false)
     } else {
         setCanMint(true)
