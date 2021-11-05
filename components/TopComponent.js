@@ -4,28 +4,26 @@ import {} from "react-bootstrap";
 
 function TopComponent() {
   return (
-    <>
+    <div className="w-full">
       <div className="background"></div>
-
-      <Container>
-        <div className="section-top">
-          <div className="section-top-left ">
-            <div
-              className="neonText"
-              style={{ fontSize: "8rem", fontWeight: "bold" }}
-            >
-              ArbiSperm
+        <div className="h-screen px-10 w-full flex flex-col md:flex-row justify-evenly items-center pt-16">
+            <div className="text-center md:w-1/2 md:flex md:items-center md:justify-center md:flex-col">
+              <div
+                className="md:text-left neonText lg:text-8xl text-6xl md:text-6xl"
+                style={{ fontWeight: "bold" }}
+              >
+                ArbiSperm
+              </div>
+              <div className="mt-3 lg:text-3xl mb-8" style={{ color: 'white'}}>
+                260 Digitally Generated ArbiSperm on Arbitrum. Just keep
+                swimming.
+              </div>
             </div>
-            <p>
-              260 Digitally Generated ArbiSperm on Arbitrum. Just keep swimming.
-            </p>
-          </div>
-          <div className="section-top-right">
-            <img className="img-fluid" src="/assets/swimmers.gif" fluid />
+          <div className="md:w-1/2 w-full flex items-center justify-center">
+            <img className="w-1/2 md:w-2/3 lg:w-3/4" src="/assets/swimmers.gif" fluid />
           </div>
         </div>
-      </Container>
-    </>
+    </div>
   );
 }
 

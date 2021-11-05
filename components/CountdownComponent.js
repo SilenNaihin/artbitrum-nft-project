@@ -5,7 +5,7 @@ import CountDownTimer from "./CountDownTimer";
 function CountdownComponent() {
   const calculateTimeLeft = () => {
     let year = new Date().getFullYear();
-    const difference = +new Date(`10/27/${year}`) - +new Date();
+    const difference = +new Date(`11/16/${year}`) - +new Date();
 
     let timeLeft = {};
 
@@ -48,15 +48,15 @@ function CountdownComponent() {
   const hoursMinSecs = { hours: 90, minutes: 20, seconds: 40 };
 
   return (
-    <div className="timer-container-bg ">
+    <div className="timer-container-bg text-center">
       <Container className="timer-container mb-5">
         <Row className="timer-top">
           <Col xs={12} md={12}>
             <p>
               {timerComponents.length ? (
                 <>
-                  <h1 style={{textAlign: 'center'}}>Launching In</h1>
-                  {timerComponents}
+                  <h1 className="text-3xl md:text-5xl font-bold" style={{textAlign: 'center'}}>Launching In</h1>
+                  <span className="md:text-2xl mt-3">{timerComponents}</span>
                 </>
               ) : (
                 <span>Minting On Arbitrum!</span>

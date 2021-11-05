@@ -60,41 +60,42 @@ function MintComponent(props) {
   useEffect(() => {
     if (signer) {
       signer.getAddress().then((addr) => setUserAddress(addr));
-      
     }
   }, [signer]);
 
   useEffect(() => {
     if (contract && userAddress) {
-      contract.balanceOf(userAddress).then((bal) => bal.toNumber()).then((bal) => setNumSwimmers(bal));
-        
-    //   async function fetchData() {
-    //       console.log(
-    //         contract.balanceOf(userAddress).catch((err) => alert(err))
-    //       );
-    //     const response = await contract
-    //       .balanceOf(userAddress)
-    //       .then((bal) => bal.toNumber())
-    //       .then((bal) => setNumSwimmers(bal));
-    //       console.log('response',response);
-    //   }
-    //   fetchData();
-        
-    //   async function fetchData() {
-    //     const balance = await contract.getBalance(userAddress);
-    //     setNumSwimmers(balance.toNumber());
-    //   }
-    //   fetchData();
+      contract
+        .balanceOf(userAddress)
+        .then((bal) => bal.toNumber())
+        .then((bal) => setNumSwimmers(bal));
+
+      //   async function fetchData() {
+      //       console.log(
+      //         contract.balanceOf(userAddress).catch((err) => alert(err))
+      //       );
+      //     const response = await contract
+      //       .balanceOf(userAddress)
+      //       .then((bal) => bal.toNumber())
+      //       .then((bal) => setNumSwimmers(bal));
+      //       console.log('response',response);
+      //   }
+      //   fetchData();
+
+      //   async function fetchData() {
+      //     const balance = await contract.getBalance(userAddress);
+      //     setNumSwimmers(balance.toNumber());
+      //   }
+      //   fetchData();
     }
   }, [contract, userAddress]);
 
-  
-//   console.log(
-//     "numSwimmers",
-//     numSwimmers,
-//     "balance",
-//     contract.balanceOf(userAddress)
-//   );
+  //   console.log(
+  //     "numSwimmers",
+  //     numSwimmers,
+  //     "balance",
+  //     contract.balanceOf(userAddress)
+  //   );
 
   useEffect(async () => {
     if (contract) {
@@ -152,87 +153,89 @@ function MintComponent(props) {
   };
 
   return (
-    <div className="block-container">
-      <h1>Mint-A-Swimmer</h1>
-      {isMetaMaskDownloaded ? (
-        <>
-          {isMetaMaskConnected ? (
-            <>
-              {isOnArbitrum ? (
-                <>
-                  <p>{numMinted}/260 minted</p>
-                  {!isSoldOut ? (
-                    <>
-                      <p>How many ArbiSperm would you like to mint?</p>
-                      <div className="mint-slider">
-                        <RangeSlider
-                          value={numSwimmers}
-                          min="1"
-                          max="20"
-                          tooltipPlacement="top"
-                          variant="dark"
-                          onChange={(changeEvent) =>
-                            setNumSwimmers(parseInt(changeEvent.target.value))
-                          }
-                        />
-                        <p>
-                          Total: {(mintPrice * numSwimmers).toFixed(3)} ETH +
-                          gas
-                        </p>
-                        {!canMint ? (
-                          <p className="error-msg">
-                            You are trying to mint more ArbiSperm for 0.025 than
-                            are available at that price. Please reduce the
-                            number of swimmers and try again.
-                          </p>
-                        ) : (
-                          <Button
-                            variant="light"
-                            onClick={() =>
-                              mint(numSwimmers, mintPrice, writeContract)
+    <div className="flex justify-center w-full">
+      <div className="block-container mx-2 w-full md:w-3/4">
+        <h1 className="text-center md:text-3xl">Mint-A-Swimmer</h1>
+        {isMetaMaskDownloaded ? (
+          <>
+            {isMetaMaskConnected ? (
+              <>
+                {isOnArbitrum ? (
+                  <>
+                    <p>{numMinted}/260 minted</p>
+                    {!isSoldOut ? (
+                      <>
+                        <p>How many ArbiSperm would you like to mint?</p>
+                        <div className="mint-slider">
+                          <RangeSlider
+                            value={numSwimmers}
+                            min="1"
+                            max="20"
+                            tooltipPlacement="top"
+                            variant="dark"
+                            onChange={(changeEvent) =>
+                              setNumSwimmers(parseInt(changeEvent.target.value))
                             }
-                          >
-                            Mint
-                          </Button>
-                        )}
-                      </div>
-                    </>
-                  ) : (
-                    <p>Sold Out!</p>
-                  )}
-                  <div className="swimmer-viewer">
-                    <h2>ArbiSperm Viewer</h2>
-                    {numUserSwimmers != 0 ? (
-                      <div></div>
+                          />
+                          <p>
+                            Total: {(mintPrice * numSwimmers).toFixed(3)} ETH +
+                            gas
+                          </p>
+                          {!canMint ? (
+                            <p className="error-msg">
+                              You are trying to mint more ArbiSperm for 0.025
+                              than are available at that price. Please reduce
+                              the number of swimmers and try again.
+                            </p>
+                          ) : (
+                            <Button
+                              variant="light"
+                              onClick={() =>
+                                mint(numSwimmers, mintPrice, writeContract)
+                              }
+                            >
+                              Mint
+                            </Button>
+                          )}
+                        </div>
+                      </>
                     ) : (
-                      <p>You have no ArbiSperm:(</p>
+                      <p>Sold Out!</p>
                     )}
-                  </div>
-                </>
-              ) : (
-                <p>
-                  Please change your network to Arbitrum One Mainnet and reload
-                  this page. Click on the extension, click on the network, and
-                  custom RPC. <br></br>
-                  <br></br>
-                  Enter the below information
-                  <br></br>- Network Name: Arb1
-                  <br></br>- New RPC URL: https://arb1.arbitrum.io/rpc
-                  <br></br>- Chain ID: 42161
-                  <br></br>- Symbol: ETH
-                  <br></br>- Block Explorer URL: https://arbiscan.io
-                </p>
-              )}
-            </>
-          ) : (
-            <Button variant="light" onClick={connectToMetaMask}>
-              Connect To Metamask
-            </Button>
-          )}
-        </>
-      ) : (
-        <p>Please download MetaMask and reload this page.</p>
-      )}
+                    <div className="swimmer-viewer">
+                      <h2>ArbiSperm Viewer</h2>
+                      {numUserSwimmers != 0 ? (
+                        <div></div>
+                      ) : (
+                        <p>You have no ArbiSperm:(</p>
+                      )}
+                    </div>
+                  </>
+                ) : (
+                  <p>
+                    Please change your network to Arbitrum One Mainnet and
+                    reload this page. Click on the extension, click on the
+                    network, and custom RPC. <br></br>
+                    <br></br>
+                    Enter the below information
+                    <br></br>- Network Name: Arb1
+                    <br></br>- New RPC URL: https://arb1.arbitrum.io/rpc
+                    <br></br>- Chain ID: 42161
+                    <br></br>- Symbol: ETH
+                    <br></br>- Block Explorer URL: https://arbiscan.io
+                  </p>
+                )}
+              </>
+            ) : (
+              <Button variant="light" onClick={connectToMetaMask}>
+                Connect To Metamask
+              </Button>
+            )}
+          </>
+        ) : (
+          <p className="text-center">Please download MetaMask and reload this page.</p>
+        )}
+      </div>
     </div>
   );
 }

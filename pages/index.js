@@ -7,12 +7,11 @@ import TopComponent from "../components/TopComponent";
 import CountdownComponent from "../components/CountdownComponent";
 import MintComponent from "../components/MintComponent";
 import { FaTwitter, FaDiscord } from "react-icons/fa";
-import 'react-bootstrap-range-slider/dist/react-bootstrap-range-slider.css';
+import "react-bootstrap-range-slider/dist/react-bootstrap-range-slider.css";
 
 export default function Home() {
-
   return (
-    <div>
+    <div className="w-screen">
       <Head>
         <title>ArbiSperm</title>
         <meta name="description" content="260 ArbiSperm on Arbitrum" />
@@ -25,23 +24,21 @@ export default function Home() {
           crossorigin="anonymous"
         />
       </Head>
+      <TopComponent />
+      <CountdownComponent />
+      <FAQComponent />
+      <MintComponent />
 
-      <main>
-        <TopComponent />
-        <CountdownComponent />
-        <FAQComponent />
-        <MintComponent />
-      </main>
-
-      <footer className="footer" style={{ paddingBottom: "12px" }}>
+      <footer className="footer w-full text-center text-xs md:text-xl" style={{ paddingBottom: "12px" }}>
         <h2 style={{ marginTop: "12px" }}>ArbiSperm &copy; 2021</h2>
-        <p>
-          Smart Contract Address:
+        <p className="mt-3">
+          Smart Contract Address
+          <br></br>
           <a href="https://arbiscan.io/address/0x2a0c81d09d28cD94E4bc65006d98cdE3095161FF">
             0x2a0c81d09d28cD94E4bc65006d98cdE3095161FF
           </a>
         </p>
-        <div className="socials">
+        <div className="flex ml-6 mt-3">
           <a href="https://twitter.com/arbisperm">
             <span>
               <FaTwitter /> &nbsp; &nbsp; &nbsp;

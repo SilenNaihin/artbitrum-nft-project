@@ -4,7 +4,7 @@ import {} from "react-bootstrap";
 
 function FAQComponent() {
   return (
-    <div className="faq-container-bg">
+    <div className="faq-container-bg md:w-5/6 mx-auto">
       <Accordion className="accordian-container">
         <Accordion.Item eventKey="0" className="accordian-item">
           <Accordion.Header className="accordian-header">
