@@ -12,13 +12,12 @@ function FAQComponent() {
           </Accordion.Header>
           <Accordion.Body className="accordian-body">
             ArbiSperm is amongst the first NFT collections launching on
-            Arbitrum. We strongly believe in two things. The power of life, and
-            the power of layer 2. Sperm is the essence of life. Every day a too
-            large to count amount of sperm is released into the world. Only the
+            Arbitrum. Ethereum is cool, but L2 applications such as Arbitrum are
+            the future. <b>Why sperm?</b> Sperm is the essence of life. Every
+            day an immense amount of sperm is released into the world. Only the
             0.000001% make it. Become a part of the ArbiSperm community to be a
-            part of the 0.000001% who are able to own a capped 200 ArbiSperm. We
-            believe in the power of Ethereum but L2 applications such as
-            Arbitrum are the future.
+            be a part of the 0.000001% who are able to own a capped 260
+            ArbiSperm.
           </Accordion.Body>
         </Accordion.Item>
         <Accordion.Item eventKey="2" className="accordian-item">
@@ -26,12 +25,27 @@ function FAQComponent() {
             Where can I find ArbiSperm?
           </Accordion.Header>
           <Accordion.Body className="accordian-body">
-            ArbiSperm are available for minting on this website. There is
-            currently no NFT marketplace on Arbitrum, but we are currently
-            adding a way to view and trade ArbiSperm on this website. ArbiSperm
-            also has a <a href="https://twitter.com/arbisperm">Twitter</a>{" "}
+            ArbiSperm are available for minting on arbisperm.com. There is
+            currently no NFT marketplace on Arbitrum, but we have added a way to
+            view ArbiSperm on this website. We are building a way to trade
+            ArbiSperm as well. ArbiSperm also has a{" "}
+            <a
+              target="_blank"
+              style={{ color: "#ADD8E6" }}
+              href="https://twitter.com/arbisperm"
+              rel="noopener noreferrer"
+            >
+              Twitter
+            </a>{" "}
             account and a{" "}
-            <a href="https://discord.com/invite/T676yVmEue">Discord </a>
+            <a
+              target="_blank"
+              style={{ color: "#ADD8E6" }}
+              href="https://discord.com/invite/T676yVmEue"
+              rel="noopener noreferrer"
+            >
+              Discord{" "}
+            </a>
             server. Follow us and join the server to become a part of the
             community!
           </Accordion.Body>
@@ -50,11 +64,13 @@ function FAQComponent() {
             What does the future of ArbiSperm look like?
           </Accordion.Header>
           <Accordion.Body className="accordian-body">
-            Once all ArbiSperm have been minted, the team will be setting up a
-            treasury with a portion of the funds to donate to charity. ArbiSperm
-            holders will get to vote on what charity those funds are donated to.
-            As well, once completely minted, two ArbiSperm that win the race
-            will be randomly selected to win ETH.
+            🥚 Once all ArbiSperm have been minted, lucky ArbiSperm HODLers will
+            be airdropped <b>ArbiEggs</b> which will also go for sale. <br></br>
+            🆘 The team will be setting up a treasury with a portion of the
+            funds to donate to <b>resolve.org</b>, a non-profit helping with
+            infertility. <br></br> 🏁 Once all ArbiEggs are sold out, three
+            lucky ArbiSperm and ArbiEgg HODLers will be randomly selected to win
+            ETH.
           </Accordion.Body>
         </Accordion.Item>
         <Accordion.Item eventKey="5" className="accordian-item">
@@ -68,26 +84,14 @@ function FAQComponent() {
               href="https://hackmd.io/@ArbiSperm/Byq8ZW6rF"
               target="_blank"
               rel="noopener noreferrer"
+              style={{ color: "#ADD8E6" }}
             >
               here
             </a>
             )
           </Accordion.Body>
         </Accordion.Item>
-        {/* <Accordion.Item eventKey="4" className="accordian-item">
-          <Accordion.Header className="accordian-header">
-            What does the future hold
-          </Accordion.Header>
-          <Accordion.Body className="accordian-body">
-            We had no idea how successful this project would be or if people
-            would even want to buy these.
-          </Accordion.Body>
-        </Accordion.Item> */}
       </Accordion>
-
-      {/* <Container className="faq-container">
-        
-      </Container> */}
     </div>
   );
 }
