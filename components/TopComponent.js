@@ -4,7 +4,7 @@ import {} from "react-bootstrap";
 
 function TopComponent() {
   return (
-    <div className="w-full">
+    <div className="w-full mb-48">
       <div className="background"></div>
         <div className="h-screen px-10 w-full flex flex-col md:flex-row justify-evenly items-center pt-16">
             <div className="text-center md:w-1/2 md:flex md:items-center md:justify-center md:flex-col">
